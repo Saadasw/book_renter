@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 10%;
+    --foreground: 60 100% 90%;
+
+    --card: 220 30% 15%;
+    --card-foreground: 60 100% 90%;
+
+    --popover: 220 30% 15%;
+    --popover-foreground: 60 100% 90%;
+
+    --primary: 220 100% 50%;
+    --primary-foreground: 60 100% 90%;
+
+    --secondary: 60 80% 50%;
+    --secondary-foreground: 220 20% 10%;
+
+    --muted: 220 20% 20%;
+    --muted-foreground: 60 60% 80%;
+
+    --accent: 60 80% 50%;
+    --accent-foreground: 220 20% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 30% 30%;
+    --input: 220 30% 30%;
+    --ring: 60 80% 50%;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 220 30% 15%;
+    --sidebar-foreground: 60 100% 90%;
+    --sidebar-primary: 60 80% 50%;
+    --sidebar-primary-foreground: 220 20% 10%;
+    --sidebar-accent: 220 20% 20%;
+    --sidebar-accent-foreground: 60 100% 90%;
+    --sidebar-border: 220 30% 30%;
+    --sidebar-ring: 60 80% 50%;
+  }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 60 100% 90%;
+
+    --card: 220 30% 15%;
+    --card-foreground: 60 100% 90%;
+
+    --popover: 220 30% 15%;
+    --popover-foreground: 60 100% 90%;
+
+    --primary: 220 100% 50%;
+    --primary-foreground: 60 100% 90%;
+
+    --secondary: 60 80% 50%;
+    --secondary-foreground: 220 20% 10%;
+
+    --muted: 220 20% 20%;
+    --muted-foreground: 60 60% 80%;
+
+    --accent: 60 80% 50%;
+    --accent-foreground: 220 20% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 30% 30%;
+    --input: 220 30% 30%;
+    --ring: 60 80% 50%;
+
+    --sidebar-background: 220 30% 15%;
+    --sidebar-foreground: 60 100% 90%;
+    --sidebar-primary: 60 80% 50%;
+    --sidebar-primary-foreground: 220 20% 10%;
+    --sidebar-accent: 220 20% 20%;
+    --sidebar-accent-foreground: 60 100% 90%;
+    --sidebar-border: 220 30% 30%;
+    --sidebar-ring: 60 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans dark:bg-background dark:text-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-['Orbitron'];
+  }
+
+  pre, code {
+    @apply font-mono;
+  }
+}
+
+/* Batman-inspired utility classes */
+@layer components {
+  .bat-container {
+    @apply container mx-auto px-4 py-6;
+  }
+  
+  .bat-card {
+    @apply bg-card border-2 border-accent rounded-md shadow-lg hover:shadow-accent/20 transition-all duration-300;
+  }
+  
+  .bat-button {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 font-['Orbitron'] uppercase tracking-wider border-2 border-accent/50 shadow-md;
+  }
+  
+  .bat-header {
+    @apply bg-card border-b-2 border-accent/50 shadow-md;
+  }
+  
+  .bat-footer {
+    @apply bg-card border-t-2 border-accent/50;
+  }
+  
+  .bat-nav-link {
+    @apply font-['Orbitron'] uppercase tracking-wider text-foreground hover:text-accent transition-colors;
+  }
+  
+  .bat-glow {
+    @apply shadow-[0_0_10px_theme(colors.accent/40)];
+  }
+  
+  .bat-grid {
+    @apply grid gap-4 p-4;
+  }
+}
+
+.markdown-editor {
+  @apply font-mono text-base leading-relaxed;
+}
+
+.markdown-preview {
+  @apply prose max-w-none prose-blue dark:prose-invert;
+}
+
+.markdown-preview pre {
+  @apply bg-secondary p-4 rounded-md overflow-x-auto;
+}
+
+.markdown-preview code {
+  @apply text-sm font-mono text-primary;
+}
+
+.markdown-preview h1,
+.markdown-preview h2,
+.markdown-preview h3,
+.markdown-preview h4,
+.markdown-preview h5,
+.markdown-preview h6 {
+  @apply font-['Orbitron'] font-semibold text-foreground;
+}
+
+.markdown-preview ul,
+.markdown-preview ol {
+  @apply my-4 ml-6;
+}
